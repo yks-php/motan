@@ -1,9 +1,9 @@
-# ykscrm/yks-YksMotan ykscrm系统YksMotan客户端
+# yks-php/motan yks系统motan客户端
 
 ## Installation
 
 Install the latest version with
 
 ```bash
-$ composer require ykscrm/yks-YksMotan
+$ composer require yks-php/motan
 ```
