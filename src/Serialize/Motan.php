@@ -15,19 +15,19 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Serialize;
+namespace Motan\Serialize;
 
 /**
- * YksMotan Simple Serializer for PHP 5.4+
+ * Motan Simple Serializer for PHP 5.4+
  *
  * <pre>
- * YksMotan 简单序列化
+ * Motan 简单序列化
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2017-1-15]
  */
-class YksMotan implements \YksMotan\Serializer
+class Motan implements \Motan\Serializer
 {
     public function serialize($params)
     {
@@ -61,7 +61,7 @@ class YksMotan implements \YksMotan\Serializer
         $type_buf = unpack("Cmsg_type", substr($data, 0, 1));
         $pos = $pos + 1;
 
-		//bug!!YksMotan2-server can return 19?
+		//bug!!Motan2-server can return 19?
 		//echo $type_buf['msg_type'];
 
         switch ($type_buf['msg_type']) {

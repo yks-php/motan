@@ -15,16 +15,16 @@
  *    limitations under the License.
  */
 
-namespace YksMotan;
+namespace Motan;
 
-use YksMotan\Endpoint\Agent;
-use YksMotan\Transport\Connection;
+use Motan\Endpoint\Agent;
+use Motan\Transport\Connection;
 
 /**
- * YksMotan Client for PHP 5.4+
+ * Motan Client for PHP 5.4+
  *
  * <pre>
- * YksMotan Client
+ * Motan Client
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>
@@ -47,7 +47,7 @@ class Client
             $this->_url_obj->setEndpoint(Constants::ENDPOINT_AGENT);
             $this->_endpoint = new Agent($this->_url_obj);
         } else {
-            throw new \Exception('YksMotan request error: ' . $this->_url_obj->getRawUrl());
+            throw new \Exception('Motan request error: ' . $this->_url_obj->getRawUrl());
             //$this->_endpoint = new Cluster($this->_url_obj);
         }
     }

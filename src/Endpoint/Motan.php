@@ -15,21 +15,21 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Endpoint;
+namespace Motan\Endpoint;
 
-use YksMotan\URL;
+use Motan\URL;
 
 /**
- * YksMotan Endpoint for PHP 5.4+
+ * Motan Endpoint for PHP 5.4+
  *
  * <pre>
- * YksMotan Endpoint
+ * Motan Endpoint
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-21]
  */
-class YksMotan extends \YksMotan\Endpointer
+class Motan extends \Motan\Endpointer
 {
     public function __construct(URL $url)
     {

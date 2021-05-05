@@ -1,6 +1,6 @@
 <?php
 
-namespace YksMotan\PB;
+namespace Motan\PB;
 
 require_once 'Console/CommandLine.php';
 

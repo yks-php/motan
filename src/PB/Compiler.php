@@ -1,6 +1,6 @@
 <?php
 
-namespace YksMotan\PB;
+namespace Motan\PB;
 
 use DrSlump\Protobuf;
 
@@ -23,7 +23,7 @@ class Compiler extends Protobuf\Compiler
 
         // Set default generator class
         // $generator = '\DrSlump\Protobuf\Compiler\PhpGenerator';
-        $generator = '\YksMotan\PB\BinaryGenerator';
+        $generator = '\Motan\PB\BinaryGenerator';
 
         // Reset comments parser
         $this->comments->reset();
@@ -39,11 +39,11 @@ class Compiler extends Protobuf\Compiler
                         break;
                     case 'weibo':
                         $this->notice("Using Weibo generator");
-                        $generator = '\YksMotan\PB\WeiboGenerator';
+                        $generator = '\Motan\PB\WeiboGenerator';
                         break;
                     case 'weibojson':
                         $this->notice("Using WeiboJson generator");
-                        $generator = '\YksMotan\PB\WeiboJsonGenerator';
+                        $generator = '\Motan\PB\WeiboJsonGenerator';
                         break;
                     case 'json':
                         $this->notice("Using ProtoJson generator");

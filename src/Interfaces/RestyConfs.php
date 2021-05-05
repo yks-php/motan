@@ -15,21 +15,21 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Interfaces;
+namespace Motan\Interfaces;
 
 /**
  * Interface RestyConfs
- * @package YksMotan\Interfaces
+ * @package Motan\Interfaces
  */
 
 /**
  * Interface RestyConfs for PHP 5.4+
  *
  * <pre>
- * YksMotan Endpoint
+ * Motan Endpoint
  * </pre>
  *
- * @package YksMotan\Interfaces
+ * @package Motan\Interfaces
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-21]
  */

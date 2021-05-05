@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\PB;
+namespace Motan\PB;
 
 use DrSlump\Protobuf;
 use google\protobuf as proto;

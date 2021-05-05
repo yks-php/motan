@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Cluster\LoadBalance;
+namespace Motan\Cluster\LoadBalance;
 
 /**
  * LB Random for PHP 5.4+
@@ -27,7 +27,7 @@ namespace YksMotan\Cluster\LoadBalance;
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */
-class Random extends \YksMotan\Cluster\LoadBalance
+class Random extends \Motan\Cluster\LoadBalance
 {
     public function onRefresh()
     {
@@ -36,7 +36,7 @@ class Random extends \YksMotan\Cluster\LoadBalance
 
     public function select($nodes, $requestid)
     {
-        return \YksMotan\Utils::crc32Hash($nodes, $requestid);
+        return \Motan\Utils::crc32Hash($nodes, $requestid);
     }
 
     public function selectToHolder()

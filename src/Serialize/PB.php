@@ -15,10 +15,10 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Serialize;
+namespace Motan\Serialize;
 
 /**
- * YksMotan PB Serializer for PHP 5.4+
+ * Motan PB Serializer for PHP 5.4+
  *
  * <pre>
  * PB 序列化
@@ -27,7 +27,7 @@ namespace YksMotan\Serialize;
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-23]
  */
-class PB implements \YksMotan\Serializer
+class PB implements \Motan\Serializer
 {
     public function serialize($params)
     {

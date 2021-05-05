@@ -15,15 +15,15 @@
  *    limitations under the License.
  */
 
-namespace YksMotan;
+namespace Motan;
 
-use YksMotan\Transport\Connection;
+use Motan\Transport\Connection;
 
 /**
- * YksMotan Endpointer for PHP 5.4+
+ * Motan Endpointer for PHP 5.4+
  *
  * <pre>
- * YksMotan Endpointer
+ * Motan Endpointer
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>
@@ -85,7 +85,7 @@ abstract class  Endpointer
         if (!$this->_connection) {
             return false;
         }
-        $this->_response = $this->_YksMotanCall($this->_serializer->serialize($req_obj));
+        $this->_response = $this->_MotanCall($this->_serializer->serialize($req_obj));
         $this->_response_header = $this->_response->getHeader();
         $this->_response_metadata = $this->_response->getMetadata();
         if ($this->_response_header->isGzip()) {
@@ -120,7 +120,7 @@ abstract class  Endpointer
         return $this->_response;
     }
 
-    protected function _YksMotanCall($request_obj)
+    protected function _MotanCall($request_obj)
     {
         $request_id = $this->_url_obj->getRequestId();
         $metadata = $this->_url_obj->getHeaders();
@@ -135,7 +135,7 @@ abstract class  Endpointer
 	    //todo default M_v=1.0;
 		$metadata['M_v'] = $this->_url_obj->getVersion();
 
-        $buf = Protocol\YksMotan::encode($request_id, $request_obj, $metadata);
+        $buf = Protocol\Motan::encode($request_id, $request_obj, $metadata);
         $this->_connection_obj->write($buf);
         return $this->_connection_obj->read();
     }

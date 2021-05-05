@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\PB;
+namespace Motan\PB;
 
 use DrSlump\Protobuf;
 
@@ -39,7 +39,7 @@ class WeiboJsonCodecer extends Protobuf\Codec\Json
     public function decode(Protobuf\Message $message, $data)
     {
         // echo "------json------>" . PHP_EOL;
-        $message->setYksMotanJsonResult($data);
+        $message->setMotanJsonResult($data);
         return $message;
     }
 }

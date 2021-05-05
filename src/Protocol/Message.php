@@ -15,13 +15,13 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Protocol;
+namespace Motan\Protocol;
 
 /**
- * YksMotan Protocol for PHP 5.4+
+ * Motan Protocol for PHP 5.4+
  *
  * <pre>
- * YksMotan 协议
+ * Motan 协议
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>

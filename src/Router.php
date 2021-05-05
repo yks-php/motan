@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-namespace YksMotan;
+namespace Motan;
 
 abstract class Router {
 

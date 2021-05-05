@@ -15,11 +15,11 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Protocol;
+namespace Motan\Protocol;
 
-use YksMotan\Constants;
-use YksMotan\Utils;
-use YksMotan\Client;
+use Motan\Constants;
+use Motan\Utils;
+use Motan\Client;
 
 const MAGIC = 0xF1F1;
 const MSG_TYPE = 0x02;
@@ -41,16 +41,16 @@ const META_SIZE_BYTE = 4;
 const BODY_SIZE_BYTE = 4;
 
 /**
- * YksMotan Protocol for PHP 5.4+
+ * Motan Protocol for PHP 5.4+
  *
  * <pre>
- * YksMotan 协议
+ * Motan 协议
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-02]
  */
-class YksMotan
+class Motan
 {
     private static function buildHeader($msg_type, $proxy, $serialize, $request_id, $msg_status)
     {
@@ -82,8 +82,8 @@ class YksMotan
     public static function encode($request_id, $req_obj, $metadata)
     {
         $header = self::buildRequestHeader($request_id);
-        if (defined('YksMotan_SERIALIZATION_TYPE')
-            && (YksMotan_SERIALIZATION_TYPE === Client::YksMotan_SERIALIZATION_SIMPLE)) {
+        if (defined('Motan_SERIALIZATION_TYPE')
+            && (Motan_SERIALIZATION_TYPE === Client::Motan_SERIALIZATION_SIMPLE)) {
             $header->setSerialize(6);
         }
         if (isset($metadata['SERIALIZATION']) && $metadata['SERIALIZATION'] === Constants::SERIALIZATION_SIMPLE) {

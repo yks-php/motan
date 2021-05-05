@@ -15,15 +15,15 @@
  *    limitations under the License.
  */
 
-namespace YksMotan;
+namespace Motan;
 
 define("BIGINT_DIVIDER", 0xffffffff + 1);
 
 /**
- * YksMotan Utils for PHP 5.4+
+ * Motan Utils for PHP 5.4+
  *
  * <pre>
- * YksMotan 工具包
+ * Motan 工具包
  * </pre>
  *
  * @author idevz <zhoujing00k@gmail.com>
@@ -65,7 +65,7 @@ class Utils
 
     public static function getRouter()
     {
-        return new \YksMotan\Route\Range();
+        return new \Motan\Route\Range();
     }
 
     public static function getSerializer($type)
@@ -73,13 +73,13 @@ class Utils
         $serializer = null;
         switch ($type) {
             case Constants::SERIALIZATION_SIMPLE:
-                $serializer = new \YksMotan\Serialize\YksMotan();
+                $serializer = new \Motan\Serialize\Motan();
                 break;
             case Constants::SERIALIZATION_PB:
-                $serializer = new \YksMotan\Serialize\PB();
+                $serializer = new \Motan\Serialize\PB();
                 break;
             case Constants::SERIALIZATION_GRPC_JSON:
-                $serializer = new \YksMotan\Serialize\GrpcJson();
+                $serializer = new \Motan\Serialize\GrpcJson();
                 break;
         }
         return $serializer;
@@ -89,11 +89,11 @@ class Utils
     {
         $ha = null;
         switch ($ha_strategy) {
-            case Constants::YksMotan_HA_FAILFAST:
-                $ha = new \YksMotan\Cluster\Ha\Failfast($url_obj);
+            case Constants::Motan_HA_FAILFAST:
+                $ha = new \Motan\Cluster\Ha\Failfast($url_obj);
                 break;
-            case Constants::YksMotan_HA_FAILOVER:
-                $ha = new \YksMotan\Cluster\Ha\Failover($url_obj);
+            case Constants::Motan_HA_FAILOVER:
+                $ha = new \Motan\Cluster\Ha\Failover($url_obj);
                 break;
         }
         return $ha;
@@ -103,11 +103,11 @@ class Utils
     {
         $lb = null;
         switch ($lb_strategy) {
-            case Constants::YksMotan_LB_RANDOM:
-                $lb = new \YksMotan\Cluster\LoadBalance\Random($url_obj);
+            case Constants::Motan_LB_RANDOM:
+                $lb = new \Motan\Cluster\LoadBalance\Random($url_obj);
                 break;
-            case Constants::YksMotan_LB_ROUNDROBIN:
-                $lb = new \YksMotan\Cluster\LoadBalance\RoundRobin($url_obj);
+            case Constants::Motan_LB_ROUNDROBIN:
+                $lb = new \Motan\Cluster\LoadBalance\RoundRobin($url_obj);
                 break;
         }
         return $lb;
@@ -118,13 +118,13 @@ class Utils
         $endpoint = null;
         switch ($url_obj->getEndpoint()) {
             case Constants::ENDPOINT_AGENT:
-                $endpoint = new \YksMotan\Endpoint\Agent($url_obj);
+                $endpoint = new \Motan\Endpoint\Agent($url_obj);
                 break;
             case Constants::ENDPOINT_GRPC:
-                $endpoint = new \YksMotan\Endpoint\Grpc($url_obj);
+                $endpoint = new \Motan\Endpoint\Grpc($url_obj);
                 break;
-            case Constants::ENDPOINT_YksMotan:
-                $endpoint = new \YksMotan\Endpoint\YksMotan($url_obj);
+            case Constants::ENDPOINT_Motan:
+                $endpoint = new \Motan\Endpoint\Motan($url_obj);
                 break;
         }
         return $endpoint;
@@ -140,7 +140,7 @@ class Utils
         if (static::$agent_conf !== NULL) {
             return static::$agent_conf;
         }
-        $conf_file = defined("YksMotan_AGENT_CONF_FILE") ? defined("YksMotan_AGENT_CONF_FILE") : AGENT_RUN_PATH . '/YksMotan.yaml';
+        $conf_file = defined("Motan_AGENT_CONF_FILE") ? defined("Motan_AGENT_CONF_FILE") : AGENT_RUN_PATH . '/Motan.yaml';
         static::$agent_conf = yaml_parse_file($conf_file);
         return static::$agent_conf;
     }
@@ -152,9 +152,9 @@ class Utils
             return static::$service_conf;
         }
         $conf = self::GetAgentConf();
-        $basic_refs = $conf['YksMotan-basicRefer'];
-        $YksMotan_refs = $conf['YksMotan-refer'];
-        foreach ($YksMotan_refs as $key => $ref_info) {
+        $basic_refs = $conf['Motan-basicRefer'];
+        $Motan_refs = $conf['Motan-refer'];
+        foreach ($Motan_refs as $key => $ref_info) {
             $tmp = [];
             if (isset($ref_info['basicRefer'])) {
                 $tmp = isset($basic_refs[$ref_info['basicRefer']]) ? $basic_refs[$ref_info['basicRefer']] : [];

@@ -1,9 +1,9 @@
 {
-    "name": "ykscrm/yks-YksMotan",
-    "description": "ykscrm YksMotan client",
+    "name": "yks-php/motan",
+    "description": "yks-php/motan",
     "keywords": [
-        "YksMotan",
-        "ykscrm"
+        "motan",
+        "yks-php"
     ],
     "type": "library",
     "license": "MIT",
@@ -12,7 +12,7 @@
 	},
     "autoload": {
         "psr-4": {
-            "YksMotan\\": "src"
+            "Motan\\": "src"
         }
     }
 }

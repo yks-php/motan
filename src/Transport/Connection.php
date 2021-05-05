@@ -15,9 +15,9 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Transport;
+namespace Motan\Transport;
 
-use YksMotan\URL;
+use Motan\URL;
 
 /**
  * TCP Connection for PHP 5.4+
@@ -114,7 +114,7 @@ class Connection
 
     public function read()
     {
-        return \YksMotan\Protocol\YksMotan::decode($this->_connection);
+        return \Motan\Protocol\Motan::decode($this->_connection);
     }
 
     public function __destruct()

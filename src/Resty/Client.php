@@ -15,13 +15,13 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Resty;
+namespace Motan\Resty;
 
-use \YksMotan\Interfaces\RestyConfs as RestyConfsInterface;
-use \YksMotan\Constants as Consts;
+use \Motan\Interfaces\RestyConfs as RestyConfsInterface;
+use \Motan\Constants as Consts;
 
 /**
- * YksMotan Resty Client for PHP 5.4+
+ * Motan Resty Client for PHP 5.4+
  *
  * <pre>
  * Resty Client
@@ -32,7 +32,7 @@ use \YksMotan\Constants as Consts;
  */
 class Client
 {
-    private $_YksMotan_client;
+    private $_Motan_client;
     private $_service_str;
     private $_group;
     private $_serialization = 1;
@@ -69,7 +69,7 @@ class Client
         $this->_group = $this->_resty_conf->getGroup();
         $this->_serialization = $this->_resty_conf->getSerialization();
         $this->_protocol = $this->_resty_conf->getProtocol();
-        $this->_YksMotan_client = new \YksMotan\Client($this->_service_str, $this->_group, $this->_protocol, $this->_serialization);
+        $this->_Motan_client = new \Motan\Client($this->_service_str, $this->_group, $this->_protocol, $this->_serialization);
 
         $this->_req_params = $this->_resty_conf->getReqParams();
         $this->addHeader('M_m', $this->_resty_conf->getPath());
@@ -77,11 +77,11 @@ class Client
 
     public function restyCall()
     {
-        return $this->_YksMotan_client->restyCall($this->_req_params, $this->_req_headers);
+        return $this->_Motan_client->restyCall($this->_req_params, $this->_req_headers);
     }
 
-    public function getYksMotanClient()
+    public function getMotanClient()
     {
-        return $this->_YksMotan_client;
+        return $this->_Motan_client;
     }
 }

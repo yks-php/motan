@@ -15,10 +15,10 @@
  *    limitations under the License.
  */
 
-namespace YksMotan;
+namespace Motan;
 
 /**
- * YksMotan Cluster for PHP 5.4+
+ * Motan Cluster for PHP 5.4+
  *
  * <pre>
  * Cluster
@@ -30,10 +30,10 @@ namespace YksMotan;
 class Cluster
 {
     private $_url_obj;
-    /** @var [string] [default:YksMotan\Cluster\Ha\Failfast] */
+    /** @var [string] [default:Motan\Cluster\Ha\Failfast] */
     private $_ha_strategy;
 
-    /** @var [\YksMotan\Cluster\LoadBalance] [default:YksMotan\Cluster\LoadBalance\Random] */
+    /** @var [\Motan\Cluster\LoadBalance] [default:Motan\Cluster\LoadBalance\Random] */
     private $_load_balance;
 
     /**
@@ -46,12 +46,12 @@ class Cluster
         $this->_load_balance = Utils::getLB($this->_url_obj->getLoadbalance(), $this->_url_obj);
     }
 
-    public function setLoadBalance(\YksMotan\Cluster\LoadBalance $loadbalance)
+    public function setLoadBalance(\Motan\Cluster\LoadBalance $loadbalance)
     {
         $this->_load_balance = $loadbalance;
     }
 
-    public function setHAStrategy(\YksMotan\Cluster\HaStrategy $ha)
+    public function setHAStrategy(\Motan\Cluster\HaStrategy $ha)
     {
         $this->_ha_strategy = $ha;
     }

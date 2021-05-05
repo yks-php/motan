@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\PB;
+namespace Motan\PB;
 
 use DrSlump\Protobuf;
 
@@ -31,19 +31,19 @@ use DrSlump\Protobuf;
  */
 abstract class  WeiboMessage extends Protobuf\Message
 {
-    protected $_YksMotan_JSON_RESULT = false;
+    protected $_Motan_JSON_RESULT = false;
     protected $_USE_WEIBOJSON_CODECER = false;
     protected $_DEFAULT_CODECER = null;
 
-    public function setYksMotanJsonResult($json_rs)
+    public function setMotanJsonResult($json_rs)
     {
-        $this->_YksMotan_JSON_RESULT = $json_rs;
+        $this->_Motan_JSON_RESULT = $json_rs;
     }
 
-    public function getYksMotanJsonResult($value = '')
+    public function getMotanJsonResult($value = '')
     {
-        if ($this->_YksMotan_JSON_RESULT !== false) {
-            return $this->_YksMotan_JSON_RESULT;
+        if ($this->_Motan_JSON_RESULT !== false) {
+            return $this->_Motan_JSON_RESULT;
         }
         return false;
     }

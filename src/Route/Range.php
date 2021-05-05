@@ -15,9 +15,9 @@
  *    limitations under the License.
  */
 
-namespace YksMotan\Route;
+namespace Motan\Route;
 
-class Range extends \YksMotan\Router
+class Range extends \Motan\Router
 {
     private static $_idc_route = [
             'aliyun'    => 'aliyun',
