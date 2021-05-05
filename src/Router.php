@@ -15,13 +15,13 @@
  *    limitations under the License.
  */
 
-namespace Motan;
+namespace YksMotan;
 
 abstract class Router {
-    
+
     protected $_defaultIdc    = 'yf';
     protected $_defaultGroup  = 'yf';
-    
+
     abstract public function getIdcByIp($ip);
     abstract public function getAgentGroupByIp($ip);
     abstract public function getAgentGroupByIdc($idc);
@@ -30,20 +30,20 @@ abstract class Router {
     {
         !$idc && $this->_defaultIdc = $idc;
     }
-    
+
     public function setDefaultGroup($group)
     {
         !$group && $this->_defaultGroup = $group;
     }
-    
+
     public function getDefaultIdc()
     {
         return $this->_defaultIdc;
     }
-    
+
     public function getDefaultGroup()
     {
         return $this->_defaultGroup;
     }
-    
+
 }

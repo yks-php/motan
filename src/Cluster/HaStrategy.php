@@ -15,18 +15,18 @@
  *    limitations under the License.
  */
 
-namespace Motan\Cluster;
+namespace YksMotan\Cluster;
 
-use Motan\Utils;
-use Motan\URL;
+use YksMotan\Utils;
+use YksMotan\URL;
 
 /**
  * HaStrategy for PHP 5.4+
- * 
+ *
  * <pre>
  * HaStrategy
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */

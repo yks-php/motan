@@ -15,26 +15,26 @@
  *    limitations under the License.
  */
 
-namespace Motan\Cluster\Ha;
+namespace YksMotan\Cluster\Ha;
 
 /**
  * HA failfast for PHP 5.4+
- * 
+ *
  * <pre>
  * 快速失败策略
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-16]
  */
-class Failfast extends \Motan\Cluster\HaStrategy
+class Failfast extends \YksMotan\Cluster\HaStrategy
 {
 	/**
 	 * [call description]
-	 * @param  \Motan\Cluster\LoadBalance $load_balance [description]
+	 * @param  \YksMotan\Cluster\LoadBalance $load_balance [description]
 	 * @return [type]                                   [description]
 	 */
-    public function call(\Motan\Cluster\LoadBalance $load_balance)
+    public function call(\YksMotan\Cluster\LoadBalance $load_balance)
     {
         return $this->getEndpoint()->setLoadBalance($load_balance)->call();
     }

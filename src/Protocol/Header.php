@@ -15,17 +15,17 @@
  *    limitations under the License.
  */
 
-namespace Motan\Protocol;
+namespace YksMotan\Protocol;
 
-use Motan\Utils;
+use YksMotan\Utils;
 
 /**
- * Motan Protocol for PHP 5.4+
- * 
+ * YksMotan Protocol for PHP 5.4+
+ *
  * <pre>
- * Motan 协议
+ * YksMotan 协议
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-02]
  */
@@ -61,7 +61,7 @@ class Header
     public function setVersion($version)
     {
         if ($version > 31) {
-            throw new \Exception('motan header: version should not great than 31');
+            throw new \Exception('YksMotan header: version should not great than 31');
         }
         $this->_version_status = ($this->_version_status & 0x07) | ($version << 3 & 0xf8);
     }
@@ -144,7 +144,7 @@ class Header
     public function setStatus($status)
     {
         if ($status > 7) {
-            throw new \Exception('motan header: status should not great than 7');
+            throw new \Exception('YksMotan header: status should not great than 7');
         }
         $this->_version_status = ($this->_version_status & 0xf8) | ($status & 0x07);
     }
@@ -157,7 +157,7 @@ class Header
     public function setSerialize($serialize)
     {
         if ($serialize > 31) {
-            throw new \Exception('motan header: serialize should not great than 31');
+            throw new \Exception('YksMotan header: serialize should not great than 31');
         }
         $this->_serialize = ($this->_serialize & 0x07) | ($serialize << 3 & 0xf8);
     }

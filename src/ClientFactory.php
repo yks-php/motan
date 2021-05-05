@@ -15,18 +15,18 @@
  *    limitations under the License.
  */
 
-namespace Motan;
+namespace YksMotan;
 
-use Motan\Utils;
-use Motan\Client;
+use YksMotan\Utils;
+use YksMotan\Client;
 
 /**
  * ClientFactory for PHP 5.4+
- * 
+ *
  * <pre>
  * ClientFactory
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-08-15]
  */
@@ -45,7 +45,7 @@ class ClientFactory
 				throw new \Exception("Couldn't found this service_conf about key:" . $key, 1);
 			}
 			$service_info = self::$_service_conf[$key];
-			$protocol = $service_info['protocol'] == 'motan2' ? TRUE : FALSE;
+			$protocol = $service_info['protocol'] == 'YksMotan2' ? TRUE : FALSE;
 			$serialization = $service_info['serialization'] == 'simple' ? 1 : 2;
 			isset($service_info['application']) && define("APP_NAME", $service_info['application']);
 			self::$_clients['key_client'] = new Client($service_info['path'], $service_info['group'], $protocol, $serialization);

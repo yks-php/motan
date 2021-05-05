@@ -15,9 +15,9 @@
  *    limitations under the License.
  */
 
-namespace Motan\Route;
+namespace YksMotan\Route;
 
-class Range extends \Motan\Router 
+class Range extends \YksMotan\Router
 {
     private static $_idc_route = [
             'aliyun'    => 'aliyun',
@@ -26,7 +26,7 @@ class Range extends \Motan\Router
             'yz'        => 'tc',
             'bx'        => 'yf',
     ];
-    
+
     private static $_idc_map = [
             'aliyun'    => [
                 [173342720, 173670399], // 10.8
@@ -48,7 +48,7 @@ class Range extends \Motan\Router
     	       [172826112, 172826367], // 10.77.30
             ],
     ];
-    
+
     public function getIdcByIp($ip)
     {
         $ip2idc = [];
@@ -68,27 +68,27 @@ class Range extends \Motan\Router
         if ($prev == $next) {
             return $prev;
         }
-        
+
         return $this->getDefaultIdc();
     }
-    
+
     public function getAgentGroupByIp($ip)
     {
         if (empty($ip)) {
             return $this->getDefaultGroup();
         }
         $idc = $this->getIdcByIp($ip);
-        
+
         return $this->getAgentGroupByIdc($idc);
     }
-    
+
     public function getAgentGroupByIdc($idc)
     {
         if (array_key_exists($idc, self::$_idc_map)) {
             return self::$_idc_map[$idc];
         }
-        
+
         return $this->getDefaultGroup();
     }
-    
+
 }

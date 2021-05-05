@@ -15,18 +15,18 @@
  *    limitations under the License.
  */
 
-namespace Motan\PB;
+namespace YksMotan\PB;
 
 use DrSlump\Protobuf;
 use google\protobuf as proto;
 
 /**
  * WeiboGenerator for PHP 5.4+
- * 
+ *
  * <pre>
  * WeiboGenerator
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-03]
  */
@@ -131,7 +131,7 @@ class WeiboGenerator extends Protobuf\Compiler\PhpGenerator
         // Compute a new namespace with the message name as suffix
         $ns .= '.' . $msg->getName();
 
-        $s[] = '  class ' . $msg->getName() . ' extends \Motan\PB\WeiboMessage {';
+        $s[] = '  class ' . $msg->getName() . ' extends \YksMotan\PB\WeiboMessage {';
         $s[] = '';
 
         foreach ($msg->getField() as $field) :

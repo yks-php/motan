@@ -1,6 +1,6 @@
 <?php
 
-namespace Motan\PB;
+namespace YksMotan\PB;
 
 require_once 'Console/CommandLine.php';
 
@@ -8,11 +8,11 @@ use DrSlump\Protobuf;
 
 /**
  * Cli for PHP 5.4+
- * 
+ *
  * <pre>
  * Cli
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-03]
  */

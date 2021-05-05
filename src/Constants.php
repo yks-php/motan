@@ -15,15 +15,15 @@
  *    limitations under the License.
  */
 
-namespace Motan;
+namespace YksMotan;
 
 /**
- * Motan PHP Constants for PHP 5.4+
- * 
+ * YksMotan PHP Constants for PHP 5.4+
+ *
  * <pre>
- * Motan PHP Constants
+ * YksMotan PHP Constants
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-08-08]
  */
@@ -31,11 +31,11 @@ class Constants
 {
 	const RESTY_COOKIE_PREFIX = 'M_cookie_';
 	const DEFAULT_VERSION = '1.0';
-	
-	const REQ_URL_TYPE_RESTY = 'resty';
-	const REQ_URL_TYPE_MOTAN = 'motan';
 
-	const PROTOCOL_MOTAN_NEW = 'motan2';
+	const REQ_URL_TYPE_RESTY = 'resty';
+	const REQ_URL_TYPE_YksMotan = 'YksMotan';
+
+	const PROTOCOL_YksMotan_NEW = 'YksMotan2';
 	const PROTOCOL_GRPC = 'grpc';
 	const PROTOCOL_CEDRUS = 'cedrus';
 	const PROTOCOL_CGI = 'cgi';
@@ -44,14 +44,14 @@ class Constants
 	const SERIALIZATION_PB = 'pb';
 	const SERIALIZATION_GRPC_JSON = 'grpc-json';
 
-	const MOTAN_HA_FAILFAST = 'failfast';
-	const MOTAN_HA_FAILOVER = 'failover';
+	const YksMotan_HA_FAILFAST = 'failfast';
+	const YksMotan_HA_FAILOVER = 'failover';
 
-	const MOTAN_LB_RANDOM = 'random';
-	const MOTAN_LB_ROUNDROBIN = 'roundrobin';
+	const YksMotan_LB_RANDOM = 'random';
+	const YksMotan_LB_ROUNDROBIN = 'roundrobin';
 
     const ENDPOINT_AGENT = 'agent';
-    const ENDPOINT_MOTAN = 'motan';
+    const ENDPOINT_YksMotan = 'YksMotan';
     const ENDPOINT_GRPC = 'grpc';
 
     const HTTP_METHOD_GET = 'GET';
@@ -62,8 +62,8 @@ class Constants
     const URL_SERIALIZE_KEY = 'serialize';
     const URL_METHOD_KEY = 'method';
 
-    const MOTAN_CONNECTION_TIME_OUT = 0.2;
-    const MOTAN_READ_TIME_OUT = 20;
+    const YksMotan_CONNECTION_TIME_OUT = 0.2;
+    const YksMotan_READ_TIME_OUT = 20;
     const DEFAULT_SOCKET_BUFFER_SIZE = 8192;
 
     const DEFAULT_AGENT_HOST = '127.0.0.1';

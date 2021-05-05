@@ -15,17 +15,17 @@
  *    limitations under the License.
  */
 
-namespace Motan\Resty;
+namespace YksMotan\Resty;
 
-use \Motan\Interfaces\RestyConfs as RestyConfsInterface;
+use \YksMotan\Interfaces\RestyConfs as RestyConfsInterface;
 
 /**
- * Motan Resty Confs for PHP 5.4+
- * 
+ * YksMotan Resty Confs for PHP 5.4+
+ *
  * <pre>
  * Resty confs
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2017-3-07]
  */
@@ -33,13 +33,13 @@ class Confs implements RestyConfsInterface
 {
 	private $_resty_url;
 	private $_resty_url_info;
-	private $_motan_resty_conf;
+	private $_YksMotan_resty_conf;
 
 	public function __construct($url)
 	{
         $this->_resty_url_info = parse_url($url);
 		$this->_resty_url = $url;
-		$this->_motan_resty_conf = require MOTAN_RESTY_CONFS_FILE;
+		$this->_YksMotan_resty_conf = require YksMotan_RESTY_CONFS_FILE;
 	}
 
 	public function getRestyUrlInfo()
@@ -60,18 +60,18 @@ class Confs implements RestyConfsInterface
 	}
 
 	public function getService() {
-		return $this->_motan_resty_conf[$this->_resty_url_info['host']]['service'];
+		return $this->_YksMotan_resty_conf[$this->_resty_url_info['host']]['service'];
 	}
 
 	public function getSerialization() {
-		return $this->_motan_resty_conf[$this->_resty_url_info['host']]['serialization'] === 'simple' ? 1 : 2;
+		return $this->_YksMotan_resty_conf[$this->_resty_url_info['host']]['serialization'] === 'simple' ? 1 : 2;
 	}
 
 	public function getProtocol() {
-		return $this->_motan_resty_conf[$this->_resty_url_info['host']]['protocol'] === 'grpc' ? FALSE : TRUE;
+		return $this->_YksMotan_resty_conf[$this->_resty_url_info['host']]['protocol'] === 'grpc' ? FALSE : TRUE;
 	}
 
 	public function getGroup() {
-		return $this->_motan_resty_conf[$this->_resty_url_info['host']]['group'];
+		return $this->_YksMotan_resty_conf[$this->_resty_url_info['host']]['group'];
 	}
 }

@@ -15,21 +15,21 @@
  *    limitations under the License.
  */
 
-namespace Motan\Endpoint;
+namespace YksMotan\Endpoint;
 
-use Motan\URL;
+use YksMotan\URL;
 
 /**
- * Motan Grpc Endpoint for PHP 5.4+
- * 
+ * YksMotan Grpc Endpoint for PHP 5.4+
+ *
  * <pre>
- * Motan Grpc Endpoint
+ * YksMotan Grpc Endpoint
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-09-11]
  */
-class Grpc extends \Motan\Endpointer
+class Grpc extends \YksMotan\Endpointer
 {
     const CLIENT_TYPE = 'grpc';
 
@@ -85,7 +85,7 @@ class Grpc extends \Motan\Endpointer
             }
         }
     }
-    
+
     public function multiCall(array $call_arr)
     {
         $rs = [];

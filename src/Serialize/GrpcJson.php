@@ -22,10 +22,10 @@
  * Time: 7:19 PM
  */
 
-namespace Motan\Serialize;
+namespace YksMotan\Serialize;
 
 
-class GrpcJson implements \Motan\Serializer
+class GrpcJson implements \YksMotan\Serializer
 {
     public function serialize($params)
     {

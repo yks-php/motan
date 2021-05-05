@@ -15,19 +15,19 @@
  *    limitations under the License.
  */
 
-namespace Motan\Cluster\LoadBalance;
+namespace YksMotan\Cluster\LoadBalance;
 
 /**
  * LB RoundRobin for PHP 5.4+
- * 
+ *
  * <pre>
  * LB RoundRobin
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */
-class RoundRobin extends \Motan\Cluster\LoadBalance
+class RoundRobin extends \YksMotan\Cluster\LoadBalance
 {
     public function onRefresh()
     {
@@ -36,7 +36,7 @@ class RoundRobin extends \Motan\Cluster\LoadBalance
 
     public function select($nodes, $requestid)
     {
-        return \Motan\Utils::crc32Hash($nodes, $requestid);
+        return \YksMotan\Utils::crc32Hash($nodes, $requestid);
     }
 
     public function selectToHolder()

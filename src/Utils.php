@@ -15,17 +15,17 @@
  *    limitations under the License.
  */
 
-namespace Motan;
+namespace YksMotan;
 
 define("BIGINT_DIVIDER", 0xffffffff + 1);
 
 /**
- * Motan Utils for PHP 5.4+
- * 
+ * YksMotan Utils for PHP 5.4+
+ *
  * <pre>
- * Motan 工具包
+ * YksMotan 工具包
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-08]
  */
@@ -62,10 +62,10 @@ class Utils
     {
         return $upper * BIGINT_DIVIDER + $lower;
     }
-    
-    public static function getRouter() 
+
+    public static function getRouter()
     {
-        return new \Motan\Route\Range();
+        return new \YksMotan\Route\Range();
     }
 
     public static function getSerializer($type)
@@ -73,13 +73,13 @@ class Utils
         $serializer = null;
         switch ($type) {
             case Constants::SERIALIZATION_SIMPLE:
-                $serializer = new \Motan\Serialize\Motan();
+                $serializer = new \YksMotan\Serialize\YksMotan();
                 break;
             case Constants::SERIALIZATION_PB:
-                $serializer = new \Motan\Serialize\PB();
+                $serializer = new \YksMotan\Serialize\PB();
                 break;
             case Constants::SERIALIZATION_GRPC_JSON:
-                $serializer = new \Motan\Serialize\GrpcJson();
+                $serializer = new \YksMotan\Serialize\GrpcJson();
                 break;
         }
         return $serializer;
@@ -89,11 +89,11 @@ class Utils
     {
         $ha = null;
         switch ($ha_strategy) {
-            case Constants::MOTAN_HA_FAILFAST:
-                $ha = new \Motan\Cluster\Ha\Failfast($url_obj);
+            case Constants::YksMotan_HA_FAILFAST:
+                $ha = new \YksMotan\Cluster\Ha\Failfast($url_obj);
                 break;
-            case Constants::MOTAN_HA_FAILOVER:
-                $ha = new \Motan\Cluster\Ha\Failover($url_obj);
+            case Constants::YksMotan_HA_FAILOVER:
+                $ha = new \YksMotan\Cluster\Ha\Failover($url_obj);
                 break;
         }
         return $ha;
@@ -103,11 +103,11 @@ class Utils
     {
         $lb = null;
         switch ($lb_strategy) {
-            case Constants::MOTAN_LB_RANDOM:
-                $lb = new \Motan\Cluster\LoadBalance\Random($url_obj);
+            case Constants::YksMotan_LB_RANDOM:
+                $lb = new \YksMotan\Cluster\LoadBalance\Random($url_obj);
                 break;
-            case Constants::MOTAN_LB_ROUNDROBIN:
-                $lb = new \Motan\Cluster\LoadBalance\RoundRobin($url_obj);
+            case Constants::YksMotan_LB_ROUNDROBIN:
+                $lb = new \YksMotan\Cluster\LoadBalance\RoundRobin($url_obj);
                 break;
         }
         return $lb;
@@ -118,13 +118,13 @@ class Utils
         $endpoint = null;
         switch ($url_obj->getEndpoint()) {
             case Constants::ENDPOINT_AGENT:
-                $endpoint = new \Motan\Endpoint\Agent($url_obj);
+                $endpoint = new \YksMotan\Endpoint\Agent($url_obj);
                 break;
             case Constants::ENDPOINT_GRPC:
-                $endpoint = new \Motan\Endpoint\Grpc($url_obj);
+                $endpoint = new \YksMotan\Endpoint\Grpc($url_obj);
                 break;
-            case Constants::ENDPOINT_MOTAN:
-                $endpoint = new \Motan\Endpoint\Motan($url_obj);
+            case Constants::ENDPOINT_YksMotan:
+                $endpoint = new \YksMotan\Endpoint\YksMotan($url_obj);
                 break;
         }
         return $endpoint;
@@ -136,11 +136,11 @@ class Utils
         if (!function_exists('yaml_parse_file')) {
             throw new \Exception('you should install yaml extension!');
         }
-        
+
         if (static::$agent_conf !== NULL) {
             return static::$agent_conf;
         }
-        $conf_file = defined("MOTAN_AGENT_CONF_FILE") ? defined("MOTAN_AGENT_CONF_FILE") : AGENT_RUN_PATH . '/motan.yaml';
+        $conf_file = defined("YksMotan_AGENT_CONF_FILE") ? defined("YksMotan_AGENT_CONF_FILE") : AGENT_RUN_PATH . '/YksMotan.yaml';
         static::$agent_conf = yaml_parse_file($conf_file);
         return static::$agent_conf;
     }
@@ -152,9 +152,9 @@ class Utils
             return static::$service_conf;
         }
         $conf = self::GetAgentConf();
-        $basic_refs = $conf['motan-basicRefer'];
-        $motan_refs = $conf['motan-refer'];
-        foreach ($motan_refs as $key => $ref_info) {
+        $basic_refs = $conf['YksMotan-basicRefer'];
+        $YksMotan_refs = $conf['YksMotan-refer'];
+        foreach ($YksMotan_refs as $key => $ref_info) {
             $tmp = [];
             if (isset($ref_info['basicRefer'])) {
                 $tmp = isset($basic_refs[$ref_info['basicRefer']]) ? $basic_refs[$ref_info['basicRefer']] : [];

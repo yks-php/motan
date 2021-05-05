@@ -15,21 +15,21 @@
  *    limitations under the License.
  */
 
-namespace Motan\Cluster\Ha;
+namespace YksMotan\Cluster\Ha;
 
 /**
  * HA Failover for PHP 5.4+
- * 
+ *
  * <pre>
  * 故障转移策略
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */
-class Failover extends \Motan\Cluster\HaStrategy
+class Failover extends \YksMotan\Cluster\HaStrategy
 {
-    public function call(\Motan\Cluster\LoadBalance $load_balance, $func_name, $args)
+    public function call(\YksMotan\Cluster\LoadBalance $load_balance, $func_name, $args)
     {
         $request_id = $args[3];
         $grpc_client = $load_balance->getGrpcClient($request_id);

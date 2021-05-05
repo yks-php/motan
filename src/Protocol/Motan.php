@@ -15,11 +15,11 @@
  *    limitations under the License.
  */
 
-namespace Motan\Protocol;
+namespace YksMotan\Protocol;
 
-use Motan\Constants;
-use Motan\Utils;
-use Motan\Client;
+use YksMotan\Constants;
+use YksMotan\Utils;
+use YksMotan\Client;
 
 const MAGIC = 0xF1F1;
 const MSG_TYPE = 0x02;
@@ -41,16 +41,16 @@ const META_SIZE_BYTE = 4;
 const BODY_SIZE_BYTE = 4;
 
 /**
- * Motan Protocol for PHP 5.4+
- * 
+ * YksMotan Protocol for PHP 5.4+
+ *
  * <pre>
- * Motan 协议
+ * YksMotan 协议
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-02]
  */
-class Motan
+class YksMotan
 {
     private static function buildHeader($msg_type, $proxy, $serialize, $request_id, $msg_status)
     {
@@ -82,8 +82,8 @@ class Motan
     public static function encode($request_id, $req_obj, $metadata)
     {
         $header = self::buildRequestHeader($request_id);
-        if (defined('MOTAN_SERIALIZATION_TYPE')
-            && (MOTAN_SERIALIZATION_TYPE === Client::MOTAN_SERIALIZATION_SIMPLE)) {
+        if (defined('YksMotan_SERIALIZATION_TYPE')
+            && (YksMotan_SERIALIZATION_TYPE === Client::YksMotan_SERIALIZATION_SIMPLE)) {
             $header->setSerialize(6);
         }
         if (isset($metadata['SERIALIZATION']) && $metadata['SERIALIZATION'] === Constants::SERIALIZATION_SIMPLE) {
@@ -193,7 +193,7 @@ class Motan
         $header_buffer = self::getBuffer($buffer, $pos, HEADER_BYTE);
         $header = unpack("nmagic/CmessageType/Cversion_status/Cserialize/Nrequest_id_upper/Nrequest_id_lower", $header_buffer);
         $header['request_id'] = Utils::bigInt2float($header['request_id_upper'], $header['request_id_lower']);
-        
+
         $header_obj = self::buildResponseHeader($header['request_id'], $header['version_status']);
         $pos += META_SIZE_BYTE;
         $metadata = [];

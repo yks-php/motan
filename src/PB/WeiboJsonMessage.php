@@ -15,33 +15,33 @@
  *    limitations under the License.
  */
 
-namespace Motan\PB;
+namespace YksMotan\PB;
 
 use DrSlump\Protobuf;
 
 /**
  * HA Failover for PHP 5.4+
- * 
+ *
  * <pre>
  * 故障转移策略
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-03]
  */
 abstract class  WeiboJsonMessage extends Protobuf\Message
 {
-    protected $_MOTAN_JSON_RESULT = false;
+    protected $_YksMotan_JSON_RESULT = false;
 
-    public function setMotanJsonResult($json_rs)
+    public function setYksMotanJsonResult($json_rs)
     {
-        $this->_MOTAN_JSON_RESULT = $json_rs;
+        $this->_YksMotan_JSON_RESULT = $json_rs;
     }
 
-    public function getMotanJsonResult($value = '')
+    public function getYksMotanJsonResult($value = '')
     {
-        if ($this->_MOTAN_JSON_RESULT !== false) {
-            return $this->_MOTAN_JSON_RESULT;
+        if ($this->_YksMotan_JSON_RESULT !== false) {
+            return $this->_YksMotan_JSON_RESULT;
         }
         return false;
     }

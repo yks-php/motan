@@ -15,25 +15,25 @@
  *    limitations under the License.
  */
 
-namespace Motan;
+namespace YksMotan;
 
 /**
- * Motan Cluster for PHP 5.4+
- * 
+ * YksMotan Cluster for PHP 5.4+
+ *
  * <pre>
  * Cluster
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-08-12]
  */
 class Cluster
 {
     private $_url_obj;
-    /** @var [string] [default:Motan\Cluster\Ha\Failfast] */
+    /** @var [string] [default:YksMotan\Cluster\Ha\Failfast] */
     private $_ha_strategy;
 
-    /** @var [\Motan\Cluster\LoadBalance] [default:Motan\Cluster\LoadBalance\Random] */
+    /** @var [\YksMotan\Cluster\LoadBalance] [default:YksMotan\Cluster\LoadBalance\Random] */
     private $_load_balance;
 
     /**
@@ -46,12 +46,12 @@ class Cluster
         $this->_load_balance = Utils::getLB($this->_url_obj->getLoadbalance(), $this->_url_obj);
     }
 
-    public function setLoadBalance(\Motan\Cluster\LoadBalance $loadbalance)
+    public function setLoadBalance(\YksMotan\Cluster\LoadBalance $loadbalance)
     {
         $this->_load_balance = $loadbalance;
     }
 
-    public function setHAStrategy(\Motan\Cluster\HaStrategy $ha)
+    public function setHAStrategy(\YksMotan\Cluster\HaStrategy $ha)
     {
         $this->_ha_strategy = $ha;
     }
@@ -113,7 +113,7 @@ class Cluster
             $endpoint->setConnectionTimeOut($time_out);
         }
     }
-    
+
     public function setReadTimeOut($time_out = 1)
     {
         $endpoint = $this->getEndpoint();
@@ -121,7 +121,7 @@ class Cluster
             $endpoint->setReadTimeOut($time_out);
         }
     }
-    
+
     // 对非agent链接方式进行重试，保底措施
     public function setRetryTimes($times = 0)
     {
@@ -130,9 +130,9 @@ class Cluster
         if (false !== $endpoint) {
             $endpoint->setRetryTimes($times);
         }
-        
+
     }
-    
+
     public function call()
     {
         return $this->_ha_strategy->call($this->_load_balance);

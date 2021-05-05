@@ -15,17 +15,17 @@
  *    limitations under the License.
  */
 
-namespace Motan\Cluster;
+namespace YksMotan\Cluster;
 
-use Motan\URL;
+use YksMotan\URL;
 
 /**
  * LoadBalance for PHP 5.4+
- * 
+ *
  * <pre>
  * LoadBalance
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */

@@ -15,15 +15,15 @@
  *    limitations under the License.
  */
 
-namespace Motan\Protocol;
+namespace YksMotan\Protocol;
 
 /**
- * Motan Protocol for PHP 5.4+
- * 
+ * YksMotan Protocol for PHP 5.4+
+ *
  * <pre>
- * Motan 协议
+ * YksMotan 协议
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-02]
  */
@@ -33,7 +33,7 @@ class Message
     private $_metadata;
     private $_body;
     private $_type;
-    
+
     private $_msg_size;
 
     public function __construct(Header $header, $metadata, $body, $type)

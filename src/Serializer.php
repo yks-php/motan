@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-namespace Motan;
+namespace YksMotan;
 
 interface Serializer
 {

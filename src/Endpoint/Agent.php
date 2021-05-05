@@ -15,22 +15,22 @@
  *    limitations under the License.
  */
 
-namespace Motan\Endpoint;
+namespace YksMotan\Endpoint;
 
-use Motan\URL;
+use YksMotan\URL;
 const AGENT_ADDR = "tcp://127.0.0.1:9981";
 
 /**
- * Motan Agent Endpoint for PHP 5.4+
- * 
+ * YksMotan Agent Endpoint for PHP 5.4+
+ *
  * <pre>
- * Motan Agent Endpoint
+ * YksMotan Agent Endpoint
  * </pre>
- * 
+ *
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-12]
  */
-class Agent extends \Motan\Endpointer
+class Agent extends \YksMotan\Endpointer
 {
     public function __construct(URL $url_obj)
     {
