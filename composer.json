@@ -1,9 +1,9 @@
 {
-    "name": "yks-php/motan",
-    "description": "yks-php/motan",
+    "name": "ykscrm/yks-motan",
+    "description": "ykscrm motan client",
     "keywords": [
         "motan",
-        "yks-php"
+        "ykscrm"
     ],
     "type": "library",
     "license": "MIT",

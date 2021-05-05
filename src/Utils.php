@@ -21,11 +21,11 @@ define("BIGINT_DIVIDER", 0xffffffff + 1);
 
 /**
  * Motan Utils for PHP 5.4+
- *
+ * 
  * <pre>
  * Motan 工具包
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-08]
  */
@@ -62,8 +62,8 @@ class Utils
     {
         return $upper * BIGINT_DIVIDER + $lower;
     }
-
-    public static function getRouter()
+    
+    public static function getRouter() 
     {
         return new \Motan\Route\Range();
     }
@@ -89,10 +89,10 @@ class Utils
     {
         $ha = null;
         switch ($ha_strategy) {
-            case Constants::Motan_HA_FAILFAST:
+            case Constants::MOTAN_HA_FAILFAST:
                 $ha = new \Motan\Cluster\Ha\Failfast($url_obj);
                 break;
-            case Constants::Motan_HA_FAILOVER:
+            case Constants::MOTAN_HA_FAILOVER:
                 $ha = new \Motan\Cluster\Ha\Failover($url_obj);
                 break;
         }
@@ -103,10 +103,10 @@ class Utils
     {
         $lb = null;
         switch ($lb_strategy) {
-            case Constants::Motan_LB_RANDOM:
+            case Constants::MOTAN_LB_RANDOM:
                 $lb = new \Motan\Cluster\LoadBalance\Random($url_obj);
                 break;
-            case Constants::Motan_LB_ROUNDROBIN:
+            case Constants::MOTAN_LB_ROUNDROBIN:
                 $lb = new \Motan\Cluster\LoadBalance\RoundRobin($url_obj);
                 break;
         }
@@ -123,7 +123,7 @@ class Utils
             case Constants::ENDPOINT_GRPC:
                 $endpoint = new \Motan\Endpoint\Grpc($url_obj);
                 break;
-            case Constants::ENDPOINT_Motan:
+            case Constants::ENDPOINT_MOTAN:
                 $endpoint = new \Motan\Endpoint\Motan($url_obj);
                 break;
         }
@@ -136,11 +136,11 @@ class Utils
         if (!function_exists('yaml_parse_file')) {
             throw new \Exception('you should install yaml extension!');
         }
-
+        
         if (static::$agent_conf !== NULL) {
             return static::$agent_conf;
         }
-        $conf_file = defined("Motan_AGENT_CONF_FILE") ? defined("Motan_AGENT_CONF_FILE") : AGENT_RUN_PATH . '/Motan.yaml';
+        $conf_file = defined("MOTAN_AGENT_CONF_FILE") ? defined("MOTAN_AGENT_CONF_FILE") : AGENT_RUN_PATH . '/motan.yaml';
         static::$agent_conf = yaml_parse_file($conf_file);
         return static::$agent_conf;
     }
@@ -152,9 +152,9 @@ class Utils
             return static::$service_conf;
         }
         $conf = self::GetAgentConf();
-        $basic_refs = $conf['Motan-basicRefer'];
-        $Motan_refs = $conf['Motan-refer'];
-        foreach ($Motan_refs as $key => $ref_info) {
+        $basic_refs = $conf['motan-basicRefer'];
+        $motan_refs = $conf['motan-refer'];
+        foreach ($motan_refs as $key => $ref_info) {
             $tmp = [];
             if (isset($ref_info['basicRefer'])) {
                 $tmp = isset($basic_refs[$ref_info['basicRefer']]) ? $basic_refs[$ref_info['basicRefer']] : [];

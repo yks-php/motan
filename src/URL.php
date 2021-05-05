@@ -17,7 +17,6 @@
 
 namespace Motan;
 
-use DrSlump\Protobuf\Exception;
 
 /**
  * Motan URL for PHP 5.4+
@@ -42,7 +41,7 @@ class URL {
     private $_version = Constants::DEFAULT_VERSION;
     /** serialize **/
     private $_serialization = Constants::SERIALIZATION_SIMPLE;  //simple
-    private $_protocol = Constants::PROTOCOL_Motan_NEW;         //Motan2
+    private $_protocol = Constants::PROTOCOL_MOTAN_NEW;         //motan2
 
     private $_group = NULL;
     private $_request_id = NULL;
@@ -53,8 +52,8 @@ class URL {
     private $_host = Constants::DEFAULT_AGENT_HOST;         //127.0.0.1
     private $_port = Constants::DEFAULT_AGENT_PORT;
 
-    private $_connection_time_out = Constants::Motan_CONNECTION_TIME_OUT;
-    private $_read_time_out = Constants::Motan_READ_TIME_OUT;
+    private $_connection_time_out = Constants::MOTAN_CONNECTION_TIME_OUT;
+    private $_read_time_out = Constants::MOTAN_READ_TIME_OUT;
     private $_read_buffer_size = Constants::DEFAULT_SOCKET_BUFFER_SIZE;     //8k
     private $_write_buffer_size = Constants::DEFAULT_SOCKET_BUFFER_SIZE;    //8k
     private $_retry_times = 0;
@@ -84,17 +83,17 @@ class URL {
             $this->_initMetaInfo(Constants::URL_METHOD_KEY, '_method');
 
             switch ($url_info['scheme']) {
-                case 'Motan':
-                case 'Motan2':
-                    $this->_url_type = Constants::REQ_URL_TYPE_Motan;
+                case 'motan':
+                case 'motan2':
+                    $this->_url_type = Constants::REQ_URL_TYPE_MOTAN;
                     $this->_service = $this->_path;
-                    $this->_endpoint = Constants::ENDPOINT_Motan;
+                    $this->_endpoint = Constants::ENDPOINT_MOTAN;
                 break;
                 case 'http':
                 case 'cedrus':
                     $this->_url_type = Constants::REQ_URL_TYPE_RESTY;
                     $this->_method = '/' . $this->_path;
-                    $this->_endpoint = Constants::ENDPOINT_Motan;
+                    $this->_endpoint = Constants::ENDPOINT_MOTAN;
                 break;
                 case 'grpc':
                     $this->_endpoint = Constants::ENDPOINT_GRPC;
@@ -104,12 +103,12 @@ class URL {
                     break;
                 case 'cgi':
                     $this->_protocol = Constants::PROTOCOL_CGI;
-                    $this->_url_type = Constants::REQ_URL_TYPE_Motan;
+                    $this->_url_type = Constants::REQ_URL_TYPE_MOTAN;
                     $this->_service = $this->_path;
-                    $this->_endpoint = Constants::ENDPOINT_Motan;
+                    $this->_endpoint = Constants::ENDPOINT_MOTAN;
                     break;
                 default:
-                    throw new Exception("Didn't support the scheme:" . $url_info['scheme']);
+                    throw new \Exception("Didn't support the scheme:" . $url_info['scheme']);
                     break;
             }
         }

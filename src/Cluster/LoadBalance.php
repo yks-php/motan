@@ -21,11 +21,11 @@ use Motan\URL;
 
 /**
  * LoadBalance for PHP 5.4+
- *
+ * 
  * <pre>
  * LoadBalance
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */

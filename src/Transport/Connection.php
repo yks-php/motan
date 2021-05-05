@@ -21,11 +21,11 @@ use Motan\URL;
 
 /**
  * TCP Connection for PHP 5.4+
- *
+ * 
  * <pre>
  * TCP 连接
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-18]
  */
@@ -80,7 +80,7 @@ class Connection
         return true;
     }
 
-    private function _setStreamOpt()
+    private function _setStreamOpt() 
     {
         if (!is_resource($this->_connection)) {
             return false;

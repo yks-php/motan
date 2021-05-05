@@ -19,11 +19,11 @@ namespace Motan\Serialize;
 
 /**
  * Motan PB Serializer for PHP 5.4+
- *
+ * 
  * <pre>
  * PB 序列化
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-23]
  */

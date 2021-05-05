@@ -22,11 +22,11 @@ use google\protobuf as proto;
 
 /**
  * BinaryGenerator for PHP 5.4+
- *
+ * 
  * <pre>
  * BinaryGenerator
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-10-03]
  */

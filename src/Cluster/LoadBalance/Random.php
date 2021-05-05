@@ -19,11 +19,11 @@ namespace Motan\Cluster\LoadBalance;
 
 /**
  * LB Random for PHP 5.4+
- *
+ * 
  * <pre>
  * LB Random
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-11-12]
  */

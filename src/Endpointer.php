@@ -21,11 +21,11 @@ use Motan\Transport\Connection;
 
 /**
  * Motan Endpointer for PHP 5.4+
- *
+ * 
  * <pre>
  * Motan Endpointer
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-08-15]
  */
@@ -85,7 +85,7 @@ abstract class  Endpointer
         if (!$this->_connection) {
             return false;
         }
-        $this->_response = $this->_MotanCall($this->_serializer->serialize($req_obj));
+        $this->_response = $this->_motanCall($this->_serializer->serialize($req_obj));
         $this->_response_header = $this->_response->getHeader();
         $this->_response_metadata = $this->_response->getMetadata();
         if ($this->_response_header->isGzip()) {
@@ -120,7 +120,7 @@ abstract class  Endpointer
         return $this->_response;
     }
 
-    protected function _MotanCall($request_obj)
+    protected function _motanCall($request_obj)
     {
         $request_id = $this->_url_obj->getRequestId();
         $metadata = $this->_url_obj->getHeaders();
@@ -131,10 +131,10 @@ abstract class  Endpointer
         $metadata['M_pp'] = $this->_url_obj->getProtocol();
         $metadata['SERIALIZATION'] = $this->_url_obj->getSerialization();
         $metadata['M_pp'] === 'cedrus' && $metadata['HTTP_Method'] = $this->_url_obj->getHttpMethod();
-
+	
 	    //todo default M_v=1.0;
 		$metadata['M_v'] = $this->_url_obj->getVersion();
-
+	
         $buf = Protocol\Motan::encode($request_id, $request_obj, $metadata);
         $this->_connection_obj->write($buf);
         return $this->_connection_obj->read();

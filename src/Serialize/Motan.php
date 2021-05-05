@@ -19,11 +19,11 @@ namespace Motan\Serialize;
 
 /**
  * Motan Simple Serializer for PHP 5.4+
- *
+ * 
  * <pre>
  * Motan 简单序列化
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2017-1-15]
  */
@@ -61,9 +61,9 @@ class Motan implements \Motan\Serializer
         $type_buf = unpack("Cmsg_type", substr($data, 0, 1));
         $pos = $pos + 1;
 
-		//bug!!Motan2-server can return 19?
+		//bug!!motan2-server can return 19?
 		//echo $type_buf['msg_type'];
-
+		
         switch ($type_buf['msg_type']) {
             case 0:
                 $obj = null;

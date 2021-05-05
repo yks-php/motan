@@ -19,11 +19,11 @@ namespace Motan\Cluster\Ha;
 
 /**
  * HA failfast for PHP 5.4+
- *
+ * 
  * <pre>
  * 快速失败策略
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-16]
  */

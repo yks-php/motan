@@ -21,11 +21,11 @@ use Motan\URL;
 
 /**
  * Motan Grpc Endpoint for PHP 5.4+
- *
+ * 
  * <pre>
  * Motan Grpc Endpoint
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-09-11]
  */
@@ -85,7 +85,7 @@ class Grpc extends \Motan\Endpointer
             }
         }
     }
-
+    
     public function multiCall(array $call_arr)
     {
         $rs = [];

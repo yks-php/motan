@@ -19,11 +19,11 @@ namespace Motan;
 
 /**
  * Motan PHP Constants for PHP 5.4+
- *
+ * 
  * <pre>
  * Motan PHP Constants
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-08-08]
  */
@@ -31,11 +31,11 @@ class Constants
 {
 	const RESTY_COOKIE_PREFIX = 'M_cookie_';
 	const DEFAULT_VERSION = '1.0';
-
+	
 	const REQ_URL_TYPE_RESTY = 'resty';
-	const REQ_URL_TYPE_Motan = 'Motan';
+	const REQ_URL_TYPE_MOTAN = 'motan';
 
-	const PROTOCOL_Motan_NEW = 'Motan2';
+	const PROTOCOL_MOTAN_NEW = 'motan2';
 	const PROTOCOL_GRPC = 'grpc';
 	const PROTOCOL_CEDRUS = 'cedrus';
 	const PROTOCOL_CGI = 'cgi';
@@ -44,14 +44,14 @@ class Constants
 	const SERIALIZATION_PB = 'pb';
 	const SERIALIZATION_GRPC_JSON = 'grpc-json';
 
-	const Motan_HA_FAILFAST = 'failfast';
-	const Motan_HA_FAILOVER = 'failover';
+	const MOTAN_HA_FAILFAST = 'failfast';
+	const MOTAN_HA_FAILOVER = 'failover';
 
-	const Motan_LB_RANDOM = 'random';
-	const Motan_LB_ROUNDROBIN = 'roundrobin';
+	const MOTAN_LB_RANDOM = 'random';
+	const MOTAN_LB_ROUNDROBIN = 'roundrobin';
 
     const ENDPOINT_AGENT = 'agent';
-    const ENDPOINT_Motan = 'Motan';
+    const ENDPOINT_MOTAN = 'motan';
     const ENDPOINT_GRPC = 'grpc';
 
     const HTTP_METHOD_GET = 'GET';
@@ -62,8 +62,8 @@ class Constants
     const URL_SERIALIZE_KEY = 'serialize';
     const URL_METHOD_KEY = 'method';
 
-    const Motan_CONNECTION_TIME_OUT = 0.2;
-    const Motan_READ_TIME_OUT = 20;
+    const MOTAN_CONNECTION_TIME_OUT = 0.2;
+    const MOTAN_READ_TIME_OUT = 20;
     const DEFAULT_SOCKET_BUFFER_SIZE = 8192;
 
     const DEFAULT_AGENT_HOST = '127.0.0.1';

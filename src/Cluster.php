@@ -19,11 +19,11 @@ namespace Motan;
 
 /**
  * Motan Cluster for PHP 5.4+
- *
+ * 
  * <pre>
  * Cluster
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-08-12]
  */
@@ -113,7 +113,7 @@ class Cluster
             $endpoint->setConnectionTimeOut($time_out);
         }
     }
-
+    
     public function setReadTimeOut($time_out = 1)
     {
         $endpoint = $this->getEndpoint();
@@ -121,7 +121,7 @@ class Cluster
             $endpoint->setReadTimeOut($time_out);
         }
     }
-
+    
     // 对非agent链接方式进行重试，保底措施
     public function setRetryTimes($times = 0)
     {
@@ -130,9 +130,9 @@ class Cluster
         if (false !== $endpoint) {
             $endpoint->setRetryTimes($times);
         }
-
+        
     }
-
+    
     public function call()
     {
         return $this->_ha_strategy->call($this->_load_balance);

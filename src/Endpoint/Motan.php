@@ -21,11 +21,11 @@ use Motan\URL;
 
 /**
  * Motan Endpoint for PHP 5.4+
- *
+ * 
  * <pre>
  * Motan Endpoint
  * </pre>
- *
+ * 
  * @author idevz <zhoujing00k@gmail.com>
  * @version V1.0 [created at: 2016-12-21]
  */
